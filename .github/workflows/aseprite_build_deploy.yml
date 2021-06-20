@@ -66,12 +66,6 @@ jobs:
          os: [macOS-latest]
        fail-fast: false    
     steps:
-      - name: (Windows) Install dependencies
-        if: matrix.os == 'windows-latest'
-        uses: seanmiddleditch/gha-setup-ninja@v1
-      - name: (Ubuntu) Install dependencies
-        if: matrix.os == 'ubuntu-latest'
-        run: sudo apt install -y cmake ninja-build libxcursor-dev libxi-dev libgl1-mesa-dev
       - name: (macOS) Install dependencies
         if: matrix.os == 'macOS-latest'
         run: brew install ninja p7zip
